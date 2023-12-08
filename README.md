@@ -45,11 +45,11 @@ Samples need to be added to retrain the models. Below, the procedure is explaine
 Add (eye) images to the samples folder satisfying following format:
 </div>
 
-.
-    /visibility_model
-        /samples
-            /<"o" if occluded, "v" if visible>_sub<ID#>_<sample ID, for example date and timestamp>.jpg
-            /o_sub000_1970-01-01_00;00.jpg  # EXAMPLE
+    .
+        /visibility_model
+            /samples
+                /<"o" if occluded, "v" if visible>_sub<ID#>_<sample ID, for example date and timestamp>.jpg
+                /o_sub000_1970-01-01_00;00.jpg  # EXAMPLE
 
 <div>                
 Samples for the visibility model can be generated with the annotation tool:
@@ -136,11 +136,11 @@ IMPORTANT:
 
 -With the name constraints, you identify groups of samples. Use "+" to separate multiple constraints.
 
-    For example, to test on subjects 000 and 001, you may use "train_set='sub000+sub001'".
+\    -For example, to test on subjects 000 and 001, you may use "train_set='sub000+sub001'".
 
 -For the folds argument, use "=" to separate different folds.
 
-    For example, to perform cross validation on the folds "sub000+sub001" and "sub002+sub003", you would use "folds='sub000+sub001=sub002+sub003'".
+\    -For example, to perform cross validation on the folds "sub000+sub001" and "sub002+sub003", you would use "folds='sub000+sub001=sub002+sub003'".
 </div>
 
 
