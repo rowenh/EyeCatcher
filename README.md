@@ -144,5 +144,5 @@ To predict sleep states on a video, use following command:
     > (venv) python3 ./predict_video.py <path_to_video.mp4> <ABSOLUTE output_directory> sub<ID#>_<specify ID, for example date> <body direction: "left", "right", "up" or "down">
 
 <div>
-The active model folders ("'./\<model path>/models/active/'") are used for predictions, and can be replaced by retrained models.
+The active model folders (for example "./rem_model/models/active/") are used for predictions, and can be replaced by retrained models.
 </div>
