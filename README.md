@@ -123,25 +123,16 @@ To train/validate a model on its samples, use following command:
 
     > (venv) python3 ./run_model.py <"open", "visibility", "rem" or "sleep"> --train_set=<name constraints> --val_set=<name constraints> --test_set=<name constraints> --folds=<name constraints>
 
-<div>
-IMPORTANT:
+    IMPORTANT:
+    -To perform cross validation, use the folds parameter, and leave train/val/test parameters empty.
+    -In cross validation, the default validation ratio is used.
+    -To build a model on all available data, leave all parameters empty. Uses default validation and test ratios.
+    -To perform LOOCV, set folds parameter to "loocv".
+    -With the name constraints, you identify groups of samples. Use "+" to separate multiple constraints.
+        -For example, to test on subjects 000 and 001, you may use "train_set='sub000+sub001'".
+    -For the folds argument, use "=" to separate different folds.
+        -For example, to perform cross validation on the folds "sub000+sub001" and "sub002+sub003", you would use "folds='sub000+sub001=sub002+sub003'".
 
--To perform cross validation, use the folds parameter, and leave train/val/test parameters empty.
-
--In cross validation, the default validation ratio is used.
-
--To build a model on all available data, leave all parameters empty. Uses default validation and test ratios.
-
--To perform LOOCV, set folds parameter to "loocv".
-
--With the name constraints, you identify groups of samples. Use "+" to separate multiple constraints.
-
-\    -For example, to test on subjects 000 and 001, you may use "train_set='sub000+sub001'".
-
--For the folds argument, use "=" to separate different folds.
-
-\    -For example, to perform cross validation on the folds "sub000+sub001" and "sub002+sub003", you would use "folds='sub000+sub001=sub002+sub003'".
-</div>
 
 
 ## USAGE:
