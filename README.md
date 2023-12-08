@@ -35,7 +35,7 @@ Activate the virtual environment when running our scripts.
 ## TRAINING:
 
 <div>
-The pipeline takes 4 models: Visibility, Open, REM and Sleep. Each model has its own directory, including a samples folder.
+The pipeline introduces 4 models: Visibility, Open, REM and Sleep. Each model has its own directory, including a samples folder.
 Samples need to be added to retrain the models. Below, the procedure is explained per model.
 </div>
 
@@ -43,13 +43,15 @@ Samples need to be added to retrain the models. Below, the procedure is explaine
 
 <div>
 Add (eye) images to the samples folder satisfying following format:
+</div>
 
 .
     /visibility_model
         /samples
             /<"o" if occluded, "v" if visible>_sub<ID#>_<sample ID, for example date and timestamp>.jpg
             /o_sub000_1970-01-01_00;00.jpg  # EXAMPLE
-                
+
+<div>                
 Samples for the visibility model can be generated with the annotation tool:
 </div>
 
@@ -59,13 +61,15 @@ Samples for the visibility model can be generated with the annotation tool:
 
 <div>
 Add eye images to the samples folder satisfying following format:
+</div>
 
-.
-    /open_model
-        /samples
-            /<"o", "c", "or" or "cr">_sub<ID#>_<sample ID, for example date and timestamp>.jpg
-            /o_sub000_1970-01-01_00;00.jpg  # EXAMPLE
-                
+    .
+        /open_model
+            /samples
+                /<"o", "c", "or" or "cr">_sub<ID#>_<sample ID, for example date and timestamp>.jpg
+                /o_sub000_1970-01-01_00;00.jpg  # EXAMPLE
+
+<div>                
 Samples for the open model can be generated with the annotation tool:
 </div>
 
@@ -75,17 +79,19 @@ Samples for the open model can be generated with the annotation tool:
 
 <div>
 Add video fragments of ~1 second (default assumption) to the respective fragments folder satisfying following format:
+</div>
 
-.
-    /rem_model
-        /fragments
-            /<"o", "c", "or" or "cr">
-                /sub<ID#>_<sample ID, for example date and timestamp>
-                    /<body direction: "left", "right", "up" or "down">_<eye: "left" or "right">.mp4
-            /o  # EXAMPLE
-                /sub000_1970-01-01_00;00
-                    /left_left.mp4
+    .
+        /rem_model
+            /fragments
+                /<"o", "c", "or" or "cr">
+                    /sub<ID#>_<sample ID, for example date and timestamp>
+                        /<body direction: "left", "right", "up" or "down">_<eye: "left" or "right">.mp4
+                /o  # EXAMPLE
+                    /sub000_1970-01-01_00;00
+                        /left_left.mp4
 
+<div>
 The samples folder can now be generated/updated with following command:
 </div>
 
@@ -101,13 +107,13 @@ Samples for the sleep model are generated with the following command:
 
 <div>
 Add generated samples to the samples folder, satisfying following structure:
-
-.
-    /sleep_model
-        /samples
-            /sub<ID#>_<specify ID, for example date>_<minute#>
-            /sub000_1970-01-01_0  # EXAMPLE
 </div>
+
+    .
+        /sleep_model
+            /samples
+                /sub<ID#>_<specify ID, for example date>_<minute#>
+                /sub000_1970-01-01_0  # EXAMPLE
 
 ### Train/validate model:
 
@@ -119,16 +125,23 @@ To train/validate a model on its samples, use following command:
 
 <div>
 IMPORTANT:
+
 -To perform cross validation, use the folds parameter, and leave train/val/test parameters empty.
+
 -In cross validation, the default validation ratio is used.
+
 -To build a model on all available data, leave all parameters empty. Uses default validation and test ratios.
+
 -To perform LOOCV, set folds parameter to "loocv".
+
 -With the name constraints, you identify groups of samples. Use "+" to separate multiple constraints.
+
     For example, to test on subjects 000 and 001, you may use "train_set='sub000+sub001'".
+
 -For the folds argument, use "=" to separate different folds.
+
     For example, to perform cross validation on the folds "sub000+sub001" and "sub002+sub003", you would use "folds='sub000+sub001=sub002+sub003'".
 </div>
-
 
 
 ## USAGE:
@@ -137,8 +150,8 @@ IMPORTANT:
 To predict sleep states on a video, use following command:
 </div>
 
-\> (venv) python3 ./predict_video.py <path_to_video.mp4> <ABSOLUTE output_directory> sub<ID#>_<specify ID, for example date> <body direction: "left", "right", "up" or "down">
+    > (venv) python3 ./predict_video.py <path_to_video.mp4> <ABSOLUTE output_directory> sub<ID#>_<specify ID, for example date> <body direction: "left", "right", "up" or "down">
 
 <div>
-The active model folders ("./<model_path>/models/active/") are used for predictions, and can be replaced by retrained models.
+The active model folders ("./<model path>/models/active/") are used for predictions, and can be replaced by retrained models.
 </div>
