@@ -8,8 +8,8 @@ The official code of "Eye Catcher: Automatic Video-Based Sleep Assessment from E
 Install dependencies.
 > python3 -m venv ./venv
 > .\venv\Scripts\activate (Windows) or > source ./venv/bin/activate (Linux)
-> python3 -m pip install ./hrnet/CrowdPose/crowdpose-api/PythonAPI
 > python3 -m pip install -r ./requirements.txt
+> python3 -m pip install ./hrnet/CrowdPose/crowdpose-api/PythonAPI
 > deactivate
 
 Finally, download pretrained models for HigherHRNet, from "https://drive.google.com/drive/folders/1bdXVmYrSynPLSk5lptvgyQ8fhziobD50".
