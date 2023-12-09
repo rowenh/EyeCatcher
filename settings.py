@@ -1,12 +1,3 @@
-hrnet_path="hrnet"
-
-# Model directories:
-visibility_model_path="visibility_model"
-open_model_path="open_model"
-rem_model_path="rem_model"
-sleep_model_path="sleep_model"
-
-# General settings
 eye_resolution=56
 eye_scale=1.2
 landmark_threshold=0.1
