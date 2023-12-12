@@ -11,7 +11,9 @@ The official code of "Eye Catcher: Automatic Video-Based Sleep Assessment from E
 <div>
 To find body landmarks in videos, we use a copy of HigherHRNet (attached in ./hrnet/) from https://github.com/HRNet/HigherHRNet-Human-Pose-Estimation.
 </div>
-\
+
+<br/>
+
 <div>
 Install dependencies.
 </div>
